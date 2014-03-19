@@ -1,10 +1,14 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+
 class GraphSearch:
     """Graph search emulation in python, from source
     http://www.python.org/doc/essays/graphs/"""
 
     def __init__(self, graph):
-        self.graph = graph 
-    
+        self.graph = graph
+
     def find_path(self, start, end, path=[]):
         self.start = start
         self.end = end
@@ -13,7 +17,7 @@ class GraphSearch:
         self.path += [self.start]
         if self.start == self.end:
             return self.path
-        if not self.graph.has_key(self.start):
+        if not self.start in self.graph:
             return None
         for node in self.graph[self.start]:
             if node not in self.path:
@@ -22,32 +26,32 @@ class GraphSearch:
                     return newpath
         return None
 
-    def find_all_path(self, start, end, path=[]):            
+    def find_all_path(self, start, end, path=[]):
         self.start = start
         self.end = end
         self.path = path
         self.path += [self.start]
         if self.start == self.end:
             return [self.path]
-        if not self.graph.has_key(self.start):
+        if not self.start in self.graph:
             return []
         paths = []
         for node in self.graph[self.start]:
             if node not in self.path:
                 newpaths = self.find_all_path(node, self.end, self.path)
                 for newpath in newpaths:
-                    paths.append(newpath)                
+                    paths.append(newpath)
         return paths
 
-    def find_shortest_path(self, start, end, path=[]):         
+    def find_shortest_path(self, start, end, path=[]):
         self.start = start
         self.end = end
         self.path = path
-        
+
         self.path += [self.start]
         if self.start == self.end:
             return self.path
-        if not self.graph.has_key(self.start):
+        if not self.start in self.graph:
             return None
         shortest = None
         for node in self.graph[self.start]:
@@ -64,13 +68,18 @@ graph = {'A': ['B', 'C'],
          'C': ['D'],
          'D': ['C'],
          'E': ['F'],
-         'F': ['C']   
+         'F': ['C']
          }
 
 #initialization of new graph search object
 graph1 = GraphSearch(graph)
 
 
-print graph1.find_path('A', 'D')
-print graph1.find_all_path('A', 'D')
-print graph1.find_shortest_path('A', 'D')
+print(graph1.find_path('A', 'D'))
+print(graph1.find_all_path('A', 'D'))
+print(graph1.find_shortest_path('A', 'D'))
+
+### OUTPUT ###
+# ['A', 'B', 'C', 'D']
+# [['A', 'B', 'C', 'D']]
+# ['A', 'B', 'C', 'D']

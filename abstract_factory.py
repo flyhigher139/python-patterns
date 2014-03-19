@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 # http://ginstrom.com/scribbles/2007/10/08/design-patterns-python-style/
 
 """Implementation of the abstract factory pattern"""
@@ -73,3 +76,17 @@ if __name__ == "__main__":
         shop.pet_factory = get_factory()
         shop.show_pet()
         print("=" * 20)
+
+### OUTPUT ###
+# This is a lovely Dog
+# It says woof
+# It eats dog food
+# ====================
+# This is a lovely Cat
+# It says meow
+# It eats cat food
+# ====================
+# This is a lovely Dog
+# It says woof
+# It eats dog food
+# ====================

@@ -1,4 +1,7 @@
-# http://www.testingperspective.com/wiki/doku.php/collaboration/chetan/designpatternsinpython/chain-of-responsibilitypattern
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""http://www.testingperspective.com/wiki/doku.php/collaboration/chetan/designpatternsinpython/chain-of-responsibilitypattern"""
 
 
 class Handler:
@@ -50,3 +53,14 @@ if __name__ == "__main__":
     client = Client()
     requests = [2, 5, 14, 22, 18, 3, 35, 27, 20]
     client.delegate(requests)
+
+### OUTPUT ###
+# request 2 handled in handler 1
+# request 5 handled in handler 1
+# request 14 handled in handler 2
+# request 22 handled in handler 3
+# request 18 handled in handler 2
+# request 3 handled in handler 1
+# end of chain, no handler for 35
+# request 27 handled in handler 3
+# request 20 handled in handler 2

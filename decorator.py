@@ -1,4 +1,7 @@
-# http://stackoverflow.com/questions/3118929/implementing-the-decorator-pattern-in-python
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+"""http://stackoverflow.com/questions/3118929/implementing-the-decorator-pattern-in-python"""
 
 
 class foo_decorator(object):
@@ -42,3 +45,8 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+### OUTPUT ###
+# decorated f1
+# original f1
+# original f2

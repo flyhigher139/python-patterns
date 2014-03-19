@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 import copy
 
 
@@ -35,3 +38,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+### OUTPUT ###
+# <__main__.main.<locals>.A object at 0x7fc1d23272d0>
+# 1 2 3

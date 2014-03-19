@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
 """http://stackoverflow.com/questions/1514120/python-implementation-of-the-object-pool-design-pattern"""
 
 
@@ -49,3 +52,9 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+### OUTPUT ###
+# Inside with: yam
+# Outside with: yam
+# Inside func: sam
+# Outside func: sam
